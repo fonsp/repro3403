@@ -1,0 +1,1383 @@
+
+➜  ~ cd Documents/repro3403 
+➜  repro3403 JULIA_DEBUG="loading,Pluto" julia19b4
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.9.0-beta4 (2023-02-07)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+(@v1.9) pkg> activate ./env1
+  Activating project at `~/Documents/repro3403/env1`
+
+julia> import HTTP
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/HTTP/zXWya_TZjDz.ji because it is for file /Users/fons/.julia/packages/HTTP/z8l0i/src/HTTP.jl not file /Users/fons/.julia/packages/HTTP/RxlHW/src/HTTP.jl
+└ @ Base loading.jl:2757
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/HTTP/zXWya_lJRXF.ji because it is for file /Users/fons/.julia/packages/HTTP/z8l0i/src/HTTP.jl not file /Users/fons/.julia/packages/HTTP/RxlHW/src/HTTP.jl
+└ @ Base loading.jl:2757
+[ Info: Precompiling HTTP [cd3eb016-35fb-5094-929b-558a96fad6f3]
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/URIs/eec2u_lJRXF.ji because it is for file /Users/fons/.julia/packages/URIs/gpp9J/src/URIs.jl not file /Users/fons/.julia/packages/URIs/6ecRe/src/URIs.jl
+└ @ Base loading.jl:2757
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/URIs/eec2u_TZjDz.dylib for URIs [5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LoggingExtras/9fRHf_TZjDz.dylib for LoggingExtras [e6f89c97-d47a-5376-807f-9c37f3926c36]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/MbedTLS_jll/u5NEn_TZjDz.dylib for MbedTLS_jll [c8ffd9c3-330d-5841-b78e-0817d7145fa1]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/MbedTLS/bf9T0_TZjDz.dylib for MbedTLS [739be429-bea8-5141-9913-cc70e7f3736d]
+└ @ Base loading.jl:1004
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.ji for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] (fafbfcfd-941a-fb4d-0000-0a89cf31ef46) since it is does not provide desired build_id (fafbfcfd-add1-f2b5-0000-0a6937112642)
+└ @ Base loading.jl:2702
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/BitFlags/sbYUO_TZjDz.dylib for BitFlags [d1d4a3ce-64b1-5f1a-9ba4-7e7e69966f35]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_TZjDz.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL/B4VRP_TZjDz.dylib for OpenSSL [4d8831e6-92b7-49fb-bdf8-b643e874388c]
+└ @ Base loading.jl:1004
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/CodecZlib/1TI30_lJRXF.ji because it is for file /Users/fons/.julia/packages/CodecZlib/ytMgl/src/CodecZlib.jl not file /Users/fons/.julia/packages/CodecZlib/ruMLE/src/CodecZlib.jl
+└ @ Base loading.jl:2757
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/TranscodingStreams/eJQ7D_TZjDz.dylib for TranscodingStreams [3bb67fe8-82b1-5028-8e26-92a6c54297fa]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/CodecZlib/1TI30_TZjDz.dylib for CodecZlib [944b1d66-785c-5afd-91f1-9de20f533193]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SimpleBufferStream/QbHsM_TZjDz.dylib for SimpleBufferStream [777ac1f9-54b0-4bf8-805c-2214025038e7]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/URIs/eec2u_TZjDz.dylib for URIs [5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LoggingExtras/9fRHf_TZjDz.dylib for LoggingExtras [e6f89c97-d47a-5376-807f-9c37f3926c36]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/MbedTLS_jll/u5NEn_TZjDz.dylib for MbedTLS_jll [c8ffd9c3-330d-5841-b78e-0817d7145fa1]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/MbedTLS/bf9T0_TZjDz.dylib for MbedTLS [739be429-bea8-5141-9913-cc70e7f3736d]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/BitFlags/sbYUO_TZjDz.dylib for BitFlags [d1d4a3ce-64b1-5f1a-9ba4-7e7e69966f35]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+└ @ Base loading.jl:1004
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.ji for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] (fafbfcfd-941a-fb4d-0000-0a89cf31ef46) since it is does not provide desired build_id (fafbfcfd-add1-f2b5-0000-0a6937112642)
+└ @ Base loading.jl:2702
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_TZjDz.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL/B4VRP_TZjDz.dylib for OpenSSL [4d8831e6-92b7-49fb-bdf8-b643e874388c]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/TranscodingStreams/eJQ7D_TZjDz.dylib for TranscodingStreams [3bb67fe8-82b1-5028-8e26-92a6c54297fa]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/CodecZlib/1TI30_TZjDz.dylib for CodecZlib [944b1d66-785c-5afd-91f1-9de20f533193]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SimpleBufferStream/QbHsM_TZjDz.dylib for SimpleBufferStream [777ac1f9-54b0-4bf8-805c-2214025038e7]
+└ @ Base loading.jl:1004
+┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HTTP/zXWya_IjCJC.dylib for HTTP [cd3eb016-35fb-5094-929b-558a96fad6f3]
+└ @ Base loading.jl:1004
+
+(env1) pkg> activate ./env2
+  Activating project at `~/Documents/repro3403/env2`
+
+(env2) pkg> instantiate
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/URIs/eec2u_TZjDz.ji because it is for file /Users/fons/.julia/packages/URIs/6ecRe/src/URIs.jl not file /Users/fons/.julia/packages/URIs/gpp9J/src/URIs.jl
+└ @ Base loading.jl:2757
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/CodecZlib/1TI30_TZjDz.ji because it is for file /Users/fons/.julia/packages/CodecZlib/ruMLE/src/CodecZlib.jl not file /Users/fons/.julia/packages/CodecZlib/ytMgl/src/CodecZlib.jl
+└ @ Base loading.jl:2757
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_TZjDz.ji because it is for file /Users/fons/.julia/packages/OpenSSL_jll/xqxRS/src/OpenSSL_jll.jl not file /Users/fons/.julia/packages/OpenSSL_jll/tsTDe/src/OpenSSL_jll.jl
+└ @ Base loading.jl:2757
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/HTTP/zXWya_IjCJC.ji because it is for file /Users/fons/.julia/packages/HTTP/RxlHW/src/HTTP.jl not file /Users/fons/.julia/packages/HTTP/z8l0i/src/HTTP.jl
+└ @ Base loading.jl:2757
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+Precompiling environment...
+  4 dependencies successfully precompiled in 45 seconds. 128 already precompiled.
+  4 dependencies had warnings during precompilation:
+┌ FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+└  
+┌ Plots [91a5bcdd-55d7-5caf-9e0b-520d859cae80]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Statistics/ERcPL_mAstZ.dylib for Statistics [10745b16-79ce-11e8-11f9-7d13ad32a3b2]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SnoopPrecompile/TcfDT_TZjDz.dylib for SnoopPrecompile [66db9d55-30c0-4569-8b51-7e840670fc0c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Reexport/bTpYr_mAstZ.dylib for Reexport [189a3867-3050-52da-a836-e630ba90ab69]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Scratch/ICI1U_mAstZ.dylib for Scratch [6c6a2e73-6563-6170-7368-637461726353]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RelocatableFolders/Yg3O9_mAstZ.dylib for RelocatableFolders [05181044-ff0b-4ac5-8273-598c1e38db00]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesBase/8e2Mm_mAstZ.dylib for RecipesBase [3cdcf5f2-1ef4-517c-9805-6587b60abb01]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FixedPointNumbers/Ple2W_mAstZ.dylib for FixedPointNumbers [53c48c17-4a7d-5ca2-90c5-79b7896eea93]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorTypes/db21U_mAstZ.dylib for ColorTypes [3da002f7-5984-5a60-b8a6-cbb66c0b333f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Colors/NKjaT_mAstZ.dylib for Colors [5ae59095-9a9b-59fe-a467-6f913c188581]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/IrrationalConstants/ukdUG_mAstZ.dylib for IrrationalConstants [92d709cd-6900-40b7-9082-c6be49f344b6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DocStringExtensions/KRdZs_mAstZ.dylib for DocStringExtensions [ffbed154-4ef7-542d-bbb7-c09d3a79fcae]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LogExpFunctions/cmCYR_mAstZ.dylib for LogExpFunctions [2ab3a3ac-af41-5b50-aa03-7779005ae688]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenLibm_jll/ToVO1_mAstZ.dylib for OpenLibm_jll [05823500-19ac-5b8b-9628-191a04bc5112]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSpecFun_jll/TDl1L_mAstZ.dylib for OpenSpecFun_jll [efe28fd5-8261-553b-a9e1-b2916fc3738e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SpecialFunctions/78gOt_mAstZ.dylib for SpecialFunctions [276daf66-3868-5448-9aa4-cd146d93841b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/TensorCore/wqzBb_mAstZ.dylib for TensorCore [62fd8b95-f654-4bbd-a8a5-9c27f68ccd50]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorVectorSpace/7uC4N_mAstZ.dylib for ColorVectorSpace [c3611d14-8923-5661-9e6a-0046d554d3a4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorSchemes/EO5fj_mAstZ.dylib for ColorSchemes [35d6a980-a343-548e-a6ea-1d62b119f2f4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotUtils/YveHG_mAstZ.dylib for PlotUtils [995b91a9-d308-5afd-9ec6-746e21dbc043]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotThemes/QxsMm_mAstZ.dylib for PlotThemes [ccf2f8ad-2431-5c83-bf29-c5338b663b6a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/NaNMath/k9Y1O_mAstZ.dylib for NaNMath [77ba4419-2d1f-58cd-9bb1-8ffee604a2e3]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesPipeline/QQIne_mAstZ.dylib for RecipesPipeline [01d81517-befc-4cb6-b9ec-a95719d0359c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Requires/IyxeS_mAstZ.dylib for Requires [ae029012-a4dd-5104-9daa-d747884805df]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/UnicodeFun/wLwUU_mAstZ.dylib for UnicodeFun [1cfade01-22cf-5700-b092-accc4b62d6e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataAPI/3a8mN_mAstZ.dylib for DataAPI [9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Compat/GSFWK_mAstZ.dylib for Compat [34da2185-b29b-5c13-b0c7-acf172513d20]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/CompatLinearAlgebraExt/Zxpzq_mAstZ.dylib for CompatLinearAlgebraExt [dbe5ba0b-aecc-598a-a867-79051b540f49]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Extension CompatLinearAlgebraExt of Compat loaded
+│  └ @ Base loading.jl:1187
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OrderedCollections/LtT3J_TZjDz.dylib for OrderedCollections [bac558e1-5e72-5ebc-8fee-abe8a469f55d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataStructures/xKiwJ_mAstZ.dylib for DataStructures [864edb3b-99cc-5e75-8d2d-829cb0a9cfe8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SortingAlgorithms/6dCmw_mAstZ.dylib for SortingAlgorithms [a2af1166-a08f-5f64-846c-94a0d3cef48c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Missings/wLfgT_mAstZ.dylib for Missings [e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsAPI/Rf3YC_mAstZ.dylib for StatsAPI [82ae8749-77ed-4fe6-ae5f-f523153014b0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsBase/EZjIG_mAstZ.dylib for StatsBase [2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Showoff/vyYkR_lJRXF.dylib for Showoff [992d4aef-0814-514b-bc4d-f2e9a6c4116f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Unzip/6rOOd_mAstZ.dylib for Unzip [41fe7b60-77ed-43a1-b4f0-825fd5a5650d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/fzf_jll/kEuMt_mAstZ.dylib for fzf_jll [214eeab7-80f7-51ab-84ad-2988db7cef09]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pipe/OQTzN_mAstZ.dylib for Pipe [b98c9c47-44ae-5843-9183-064241ee97a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLFzf/dM4lv_mAstZ.dylib for JLFzf [1019f520-868f-41f5-a6de-eb00f4b6a39c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Parsers/833b9_mAstZ.dylib for Parsers [69de0a69-1ddd-5017-9359-2bf0b02dc9f0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JSON/uf6oy_mAstZ.dylib for JSON [682c06a0-de6a-54ab-a142-c8b1cf79cde6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Measures/RAMEy_mAstZ.dylib for Measures [442fdcdd-2543-5da2-b0f3-8c86c306513e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG/TGvga_rHNe4.dylib for FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR/NDU5Y_rHNe4.dylib for GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  └ @ Base loading.jl:1004
+└  
+
+(env2) pkg> instantiate
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+Precompiling environment...
+  4 dependencies successfully precompiled in 45 seconds. 128 already precompiled.
+  4 dependencies had warnings during precompilation:
+┌ FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+└  
+┌ Plots [91a5bcdd-55d7-5caf-9e0b-520d859cae80]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Statistics/ERcPL_mAstZ.dylib for Statistics [10745b16-79ce-11e8-11f9-7d13ad32a3b2]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SnoopPrecompile/TcfDT_TZjDz.dylib for SnoopPrecompile [66db9d55-30c0-4569-8b51-7e840670fc0c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Reexport/bTpYr_mAstZ.dylib for Reexport [189a3867-3050-52da-a836-e630ba90ab69]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Scratch/ICI1U_mAstZ.dylib for Scratch [6c6a2e73-6563-6170-7368-637461726353]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RelocatableFolders/Yg3O9_mAstZ.dylib for RelocatableFolders [05181044-ff0b-4ac5-8273-598c1e38db00]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesBase/8e2Mm_mAstZ.dylib for RecipesBase [3cdcf5f2-1ef4-517c-9805-6587b60abb01]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FixedPointNumbers/Ple2W_mAstZ.dylib for FixedPointNumbers [53c48c17-4a7d-5ca2-90c5-79b7896eea93]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorTypes/db21U_mAstZ.dylib for ColorTypes [3da002f7-5984-5a60-b8a6-cbb66c0b333f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Colors/NKjaT_mAstZ.dylib for Colors [5ae59095-9a9b-59fe-a467-6f913c188581]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/IrrationalConstants/ukdUG_mAstZ.dylib for IrrationalConstants [92d709cd-6900-40b7-9082-c6be49f344b6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DocStringExtensions/KRdZs_mAstZ.dylib for DocStringExtensions [ffbed154-4ef7-542d-bbb7-c09d3a79fcae]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LogExpFunctions/cmCYR_mAstZ.dylib for LogExpFunctions [2ab3a3ac-af41-5b50-aa03-7779005ae688]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenLibm_jll/ToVO1_mAstZ.dylib for OpenLibm_jll [05823500-19ac-5b8b-9628-191a04bc5112]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSpecFun_jll/TDl1L_mAstZ.dylib for OpenSpecFun_jll [efe28fd5-8261-553b-a9e1-b2916fc3738e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SpecialFunctions/78gOt_mAstZ.dylib for SpecialFunctions [276daf66-3868-5448-9aa4-cd146d93841b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/TensorCore/wqzBb_mAstZ.dylib for TensorCore [62fd8b95-f654-4bbd-a8a5-9c27f68ccd50]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorVectorSpace/7uC4N_mAstZ.dylib for ColorVectorSpace [c3611d14-8923-5661-9e6a-0046d554d3a4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorSchemes/EO5fj_mAstZ.dylib for ColorSchemes [35d6a980-a343-548e-a6ea-1d62b119f2f4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotUtils/YveHG_mAstZ.dylib for PlotUtils [995b91a9-d308-5afd-9ec6-746e21dbc043]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotThemes/QxsMm_mAstZ.dylib for PlotThemes [ccf2f8ad-2431-5c83-bf29-c5338b663b6a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/NaNMath/k9Y1O_mAstZ.dylib for NaNMath [77ba4419-2d1f-58cd-9bb1-8ffee604a2e3]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesPipeline/QQIne_mAstZ.dylib for RecipesPipeline [01d81517-befc-4cb6-b9ec-a95719d0359c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Requires/IyxeS_mAstZ.dylib for Requires [ae029012-a4dd-5104-9daa-d747884805df]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/UnicodeFun/wLwUU_mAstZ.dylib for UnicodeFun [1cfade01-22cf-5700-b092-accc4b62d6e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataAPI/3a8mN_mAstZ.dylib for DataAPI [9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Compat/GSFWK_mAstZ.dylib for Compat [34da2185-b29b-5c13-b0c7-acf172513d20]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/CompatLinearAlgebraExt/Zxpzq_mAstZ.dylib for CompatLinearAlgebraExt [dbe5ba0b-aecc-598a-a867-79051b540f49]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Extension CompatLinearAlgebraExt of Compat loaded
+│  └ @ Base loading.jl:1187
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OrderedCollections/LtT3J_TZjDz.dylib for OrderedCollections [bac558e1-5e72-5ebc-8fee-abe8a469f55d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataStructures/xKiwJ_mAstZ.dylib for DataStructures [864edb3b-99cc-5e75-8d2d-829cb0a9cfe8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SortingAlgorithms/6dCmw_mAstZ.dylib for SortingAlgorithms [a2af1166-a08f-5f64-846c-94a0d3cef48c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Missings/wLfgT_mAstZ.dylib for Missings [e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsAPI/Rf3YC_mAstZ.dylib for StatsAPI [82ae8749-77ed-4fe6-ae5f-f523153014b0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsBase/EZjIG_mAstZ.dylib for StatsBase [2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Showoff/vyYkR_lJRXF.dylib for Showoff [992d4aef-0814-514b-bc4d-f2e9a6c4116f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Unzip/6rOOd_mAstZ.dylib for Unzip [41fe7b60-77ed-43a1-b4f0-825fd5a5650d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/fzf_jll/kEuMt_mAstZ.dylib for fzf_jll [214eeab7-80f7-51ab-84ad-2988db7cef09]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pipe/OQTzN_mAstZ.dylib for Pipe [b98c9c47-44ae-5843-9183-064241ee97a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLFzf/dM4lv_mAstZ.dylib for JLFzf [1019f520-868f-41f5-a6de-eb00f4b6a39c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Parsers/833b9_mAstZ.dylib for Parsers [69de0a69-1ddd-5017-9359-2bf0b02dc9f0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JSON/uf6oy_mAstZ.dylib for JSON [682c06a0-de6a-54ab-a142-c8b1cf79cde6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Measures/RAMEy_mAstZ.dylib for Measures [442fdcdd-2543-5da2-b0f3-8c86c306513e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG/TGvga_rHNe4.dylib for FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR/NDU5Y_rHNe4.dylib for GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  └ @ Base loading.jl:1004
+└  
+
+(env2) pkg> instantiate
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-12bd-31d1-0000-0a86d9c058df) since it is does not provide desired build_id (fafbfcfd-4042-e8d1-0000-0acf047b2ad8)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.ji for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d] (fafbfcfd-1af8-c034-0000-0acdec781b67) since it is does not provide desired build_id (fafbfcfd-6ca8-7c6e-0000-0a87577c2bb7)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.ji for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a] (fafbfcfd-bd17-6f03-0000-0ace99d261c8) since it is does not provide desired build_id (fafbfcfd-9698-89c6-0000-0a874bf92514)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.ji for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566] (fafbfcfd-13a6-188a-0000-0acec5eb145b) since it is does not provide desired build_id (fafbfcfd-1a2d-db24-0000-0a874169be1d)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.ji for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0] (fafbfcfd-5403-d8e6-0000-0acee6a868f6) since it is does not provide desired build_id (fafbfcfd-9137-1839-0000-0a86e454223b)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Ignoring cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.ji for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5] (fafbfcfd-4042-e8d1-0000-0acf047b2ad8) since it is does not provide desired build_id (fafbfcfd-12bd-31d1-0000-0a86d9c058df)
+└ @ Base loading.jl:2702
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+┌ Debug: Rejecting cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_mAstZ.ji because module OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95] is already loaded and incompatible.
+└ @ Base loading.jl:2723
+Precompiling environment...
+  4 dependencies successfully precompiled in 45 seconds. 128 already precompiled.
+  4 dependencies had warnings during precompilation:
+┌ FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+└  
+┌ GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+└  
+┌ Plots [91a5bcdd-55d7-5caf-9e0b-520d859cae80]
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Statistics/ERcPL_mAstZ.dylib for Statistics [10745b16-79ce-11e8-11f9-7d13ad32a3b2]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Preferences/pWSk8_TZjDz.dylib for Preferences [21216c6a-2e73-6563-6e65-726566657250]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SnoopPrecompile/TcfDT_TZjDz.dylib for SnoopPrecompile [66db9d55-30c0-4569-8b51-7e840670fc0c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Reexport/bTpYr_mAstZ.dylib for Reexport [189a3867-3050-52da-a836-e630ba90ab69]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Scratch/ICI1U_mAstZ.dylib for Scratch [6c6a2e73-6563-6170-7368-637461726353]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RelocatableFolders/Yg3O9_mAstZ.dylib for RelocatableFolders [05181044-ff0b-4ac5-8273-598c1e38db00]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesBase/8e2Mm_mAstZ.dylib for RecipesBase [3cdcf5f2-1ef4-517c-9805-6587b60abb01]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FixedPointNumbers/Ple2W_mAstZ.dylib for FixedPointNumbers [53c48c17-4a7d-5ca2-90c5-79b7896eea93]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorTypes/db21U_mAstZ.dylib for ColorTypes [3da002f7-5984-5a60-b8a6-cbb66c0b333f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Colors/NKjaT_mAstZ.dylib for Colors [5ae59095-9a9b-59fe-a467-6f913c188581]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/IrrationalConstants/ukdUG_mAstZ.dylib for IrrationalConstants [92d709cd-6900-40b7-9082-c6be49f344b6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DocStringExtensions/KRdZs_mAstZ.dylib for DocStringExtensions [ffbed154-4ef7-542d-bbb7-c09d3a79fcae]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LogExpFunctions/cmCYR_mAstZ.dylib for LogExpFunctions [2ab3a3ac-af41-5b50-aa03-7779005ae688]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenLibm_jll/ToVO1_mAstZ.dylib for OpenLibm_jll [05823500-19ac-5b8b-9628-191a04bc5112]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLLWrappers/7Zgw7_TZjDz.dylib for JLLWrappers [692b3bcd-3c85-4b1f-b108-f13ce0eb3210]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSpecFun_jll/TDl1L_mAstZ.dylib for OpenSpecFun_jll [efe28fd5-8261-553b-a9e1-b2916fc3738e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SpecialFunctions/78gOt_mAstZ.dylib for SpecialFunctions [276daf66-3868-5448-9aa4-cd146d93841b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/TensorCore/wqzBb_mAstZ.dylib for TensorCore [62fd8b95-f654-4bbd-a8a5-9c27f68ccd50]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorVectorSpace/7uC4N_mAstZ.dylib for ColorVectorSpace [c3611d14-8923-5661-9e6a-0046d554d3a4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/ColorSchemes/EO5fj_mAstZ.dylib for ColorSchemes [35d6a980-a343-548e-a6ea-1d62b119f2f4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotUtils/YveHG_mAstZ.dylib for PlotUtils [995b91a9-d308-5afd-9ec6-746e21dbc043]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PlotThemes/QxsMm_mAstZ.dylib for PlotThemes [ccf2f8ad-2431-5c83-bf29-c5338b663b6a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/NaNMath/k9Y1O_mAstZ.dylib for NaNMath [77ba4419-2d1f-58cd-9bb1-8ffee604a2e3]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/RecipesPipeline/QQIne_mAstZ.dylib for RecipesPipeline [01d81517-befc-4cb6-b9ec-a95719d0359c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Requires/IyxeS_mAstZ.dylib for Requires [ae029012-a4dd-5104-9daa-d747884805df]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/UnicodeFun/wLwUU_mAstZ.dylib for UnicodeFun [1cfade01-22cf-5700-b092-accc4b62d6e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataAPI/3a8mN_mAstZ.dylib for DataAPI [9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Compat/GSFWK_mAstZ.dylib for Compat [34da2185-b29b-5c13-b0c7-acf172513d20]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/CompatLinearAlgebraExt/Zxpzq_mAstZ.dylib for CompatLinearAlgebraExt [dbe5ba0b-aecc-598a-a867-79051b540f49]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Extension CompatLinearAlgebraExt of Compat loaded
+│  └ @ Base loading.jl:1187
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OrderedCollections/LtT3J_TZjDz.dylib for OrderedCollections [bac558e1-5e72-5ebc-8fee-abe8a469f55d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/DataStructures/xKiwJ_mAstZ.dylib for DataStructures [864edb3b-99cc-5e75-8d2d-829cb0a9cfe8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/SortingAlgorithms/6dCmw_mAstZ.dylib for SortingAlgorithms [a2af1166-a08f-5f64-846c-94a0d3cef48c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Missings/wLfgT_mAstZ.dylib for Missings [e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsAPI/Rf3YC_mAstZ.dylib for StatsAPI [82ae8749-77ed-4fe6-ae5f-f523153014b0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/StatsBase/EZjIG_mAstZ.dylib for StatsBase [2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Showoff/vyYkR_lJRXF.dylib for Showoff [992d4aef-0814-514b-bc4d-f2e9a6c4116f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Unzip/6rOOd_mAstZ.dylib for Unzip [41fe7b60-77ed-43a1-b4f0-825fd5a5650d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/fzf_jll/kEuMt_mAstZ.dylib for fzf_jll [214eeab7-80f7-51ab-84ad-2988db7cef09]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pipe/OQTzN_mAstZ.dylib for Pipe [b98c9c47-44ae-5843-9183-064241ee97a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JLFzf/dM4lv_mAstZ.dylib for JLFzf [1019f520-868f-41f5-a6de-eb00f4b6a39c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Parsers/833b9_mAstZ.dylib for Parsers [69de0a69-1ddd-5017-9359-2bf0b02dc9f0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JSON/uf6oy_mAstZ.dylib for JSON [682c06a0-de6a-54ab-a142-c8b1cf79cde6]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Measures/RAMEy_mAstZ.dylib for Measures [442fdcdd-2543-5da2-b0f3-8c86c306513e]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Bzip2_jll/biC9V_mAstZ.dylib for Bzip2_jll [6e34b625-4abd-537c-b88f-471c36dfa7a0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zlib_jll/xjq3Q_TZjDz.dylib for Zlib_jll [83775a58-1f1d-513f-b197-d71354ab007a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FreeType2_jll/AzWNe_mAstZ.dylib for FreeType2_jll [d7e528f0-a631-5988-bf34-fe36492bcfd7]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FriBidi_jll/tf6pT_mAstZ.dylib for FriBidi_jll [559328eb-81f9-559d-9380-de523a88c83c]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libiconv_jll/ujTCF_mAstZ.dylib for Libiconv_jll [94ce4f54-9a6c-5748-9c1c-f9c7231a4531]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libffi_jll/y4lM8_mAstZ.dylib for Libffi_jll [e9f186c6-92d2-5b65-8a66-fee21dc1b490]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/XML2_jll/xWVg2_mAstZ.dylib for XML2_jll [02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Gettext_jll/l4zGN_mAstZ.dylib for Gettext_jll [78b55507-aeef-58d4-861c-77aaff3498b1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/PCRE2_jll/8i0KO_mAstZ.dylib for PCRE2_jll [efcefdf7-47ab-520b-bdef-62a2eaa19f15]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Glib_jll/S5dsb_lJRXF.dylib for Glib_jll [7746bdde-850d-59dc-9ae8-88ece973131d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Pixman_jll/yWAFT_mAstZ.dylib for Pixman_jll [30392449-352a-5448-841d-b1acce4e97dc]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libpng_jll/paYot_mAstZ.dylib for libpng_jll [b53b4c65-9356-5827-b1ea-8c7a1a84506f]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libuuid_jll/H4xj5_mAstZ.dylib for Libuuid_jll [38a345b3-de98-5d2b-a5d3-14cd9215e700]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Expat_jll/4P57b_mAstZ.dylib for Expat_jll [2e619515-83b5-522b-bb60-26c02a35a201]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Fontconfig_jll/xsKJT_mAstZ.dylib for Fontconfig_jll [a3f928ae-7b40-5064-980b-68af3947d34b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LZO_jll/dUj3l_mAstZ.dylib for LZO_jll [dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Cairo_jll/ouRHo_lJRXF.dylib for Cairo_jll [83423d85-b0ee-5818-9007-b63ccbeb887a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Graphite2_jll/XMuhG_mAstZ.dylib for Graphite2_jll [3b182d85-2403-5c21-9c21-1e1f0cc25472]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/HarfBuzz_jll/h60co_lJRXF.dylib for HarfBuzz_jll [2e76f6c2-a576-52d4-95c1-20adfe4de566]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libass_jll/JqZi8_lJRXF.dylib for libass_jll [0ac62f75-1d6f-5e53-bd7c-93b484bb37c0]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libfdk_aac_jll/Ido5Q_mAstZ.dylib for libfdk_aac_jll [f638f0a6-7fb0-5443-88ba-1cc74229b280]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LAME_jll/SFEUf_mAstZ.dylib for LAME_jll [c1c5ebd0-6772-5130-a774-d5fcae4a789d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Ogg_jll/gOU2R_mAstZ.dylib for Ogg_jll [e7412a2a-1a6e-54c0-be00-318e2571c051]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libvorbis_jll/X4qYa_mAstZ.dylib for libvorbis_jll [f27f6e37-5d2b-51aa-960f-b287f2bc3b7a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/libaom_jll/i2i8X_mAstZ.dylib for libaom_jll [a4ae2306-e953-59d6-aa16-d00cac43593b]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x264_jll/XmaTp_mAstZ.dylib for x264_jll [1270edf5-f2f9-52d2-97e9-ab00b5d0237a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/x265_jll/5KlGs_mAstZ.dylib for x265_jll [dfaa095f-4041-5dcd-9319-2fabd8486b76]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/OpenSSL_jll/M3X35_mAstZ.dylib for OpenSSL_jll [458c3c95-2e84-50aa-8efc-19380b2a3a95]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Opus_jll/vFQVB_mAstZ.dylib for Opus_jll [91d4177d-7536-5919-b921-800302f37372]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG_jll/uSD0T_lJRXF.dylib for FFMPEG_jll [b22a6f82-2f65-5046-a5b2-351ab43fb4e5]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/FFMPEG/TGvga_rHNe4.dylib for FFMPEG [c87230d0-a227-11e9-1b43-d7ebe4e7570a]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GLFW_jll/IYB2C_lJRXF.dylib for GLFW_jll [0656b61e-2033-5cc2-a64a-77c0f6c09b89]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/JpegTurbo_jll/EC0Oy_mAstZ.dylib for JpegTurbo_jll [aacddb02-875f-59d6-b918-886e6ef4fbf8]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/LERC_jll/0PXNr_mAstZ.dylib for LERC_jll [88015f11-f218-50d7-93a8-a6af411a945d]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Zstd_jll/cFDJB_mAstZ.dylib for Zstd_jll [3161d3a3-bdf6-5164-811a-617609db77b4]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Libtiff_jll/f0w9B_mAstZ.dylib for Libtiff_jll [89763e89-9b03-5906-acba-b20f662cd828]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/Qt5Base_jll/RrDcL_lJRXF.dylib for Qt5Base_jll [ea2cea3b-5b76-57ae-a6ef-0a8af62496e1]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR_jll/jV9xf_rHNe4.dylib for GR_jll [d2c73de3-f751-5644-a686-071e5b155ba9]
+│  └ @ Base loading.jl:1004
+│  ┌ Debug: Loading object cache file /Users/fons/.julia/compiled/v1.9/GR/NDU5Y_rHNe4.dylib for GR [28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71]
+│  └ @ Base loading.jl:1004
+└  
+
+(env2) pkg> 
